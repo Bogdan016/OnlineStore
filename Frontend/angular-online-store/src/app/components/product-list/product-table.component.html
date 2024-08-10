@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <table class="table table-hover table-borderless shadow-sm">
+      <thead>
+        <tr class="bg-light">
+          <th scope="col" class="text-muted"></th>
+          <th scope="col" class="text-muted">Name</th>
+          <th scope="col" class="text-muted">Price</th>
+          <th scope="col" class="text-muted">Units in Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tempProduct of products">
+          <td class="align-middle">
+            <img src=" {{ tempProduct.imageURL }} " height="50" >
+          </td>
+          <td class="align-middle">{{ tempProduct.name }}</td>
+          <td class="align-middle">{{ tempProduct.unitPrice | currency: 'EUR' }}</td>
+          <td class="align-middle">{{ tempProduct.unitsInStock }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

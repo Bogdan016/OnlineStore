@@ -1,0 +1,12 @@
+<div class="sidebar-menu bg-light border-end">
+    <nav class="navbar-sidebar py-2">
+        <ul class="list-unstyled mb-0">
+            <li *ngFor="let tempProductCategory of productCategories" class="nav-item">
+                <a routerLink="/category/{{ tempProductCategory.id }}/{{ tempProductCategory.categoryName }}"
+                    routerLinkActive="active-link" class="nav-link d-flex align-items-center py-3 px-1 border-bottom">
+                    <span>{{ tempProductCategory.categoryName }}</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

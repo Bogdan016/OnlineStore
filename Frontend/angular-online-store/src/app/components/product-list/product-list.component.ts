@@ -13,7 +13,12 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
   currentCategoryId: number = 0;
   currentCategoryName: string = "";
-  searchMode: boolean = true;
+  searchMode: boolean = false;
+
+  thePageNumber: number = 1;
+  thePageSize: number = 18;
+  theTotalElements: number = 0;
+  previousCategoryId: number = 1;
 
   constructor(private productService: ProductService,
               private route: ActivatedRoute) { }
@@ -59,12 +64,24 @@ export class ProductListComponent implements OnInit {
       this.currentCategoryName = 'Phones';
     }
     
+    if(this.previousCategoryId != this.currentCategoryId){
+      this.thePageNumber = 1;
+    }
 
-    this.productService.getProductList(this.currentCategoryId).subscribe(
-      data => {
-        this.products = data;
-      }
-    )
+    this.previousCategoryId = this.currentCategoryId;
+    console.log(`curentCategoryId=${this.currentCategoryId}, this.thePageNumber=${this.currentCategoryId}`);
+
+    this.productService.getProductListPaginate( this.thePageNumber - 1, this.thePageSize, this.currentCategoryId ).subscribe(this.processResult());
+
   }
+  processResult() {
+    return (data: any) => {
+      this.products = data._embedded.products;
+      this.thePageNumber = data.page.number + 1;
+      this.thePageSize = data.page.size;
+      this.theTotalElements = data.page.totalElements;
+    };
+  }
+  
 
 }

@@ -774,8 +774,39 @@ table.table.table-bordered th {
 }
 
 .detail-section {
-    margin-top: 60px
+    margin-top: 90px
 }
+
+.detail-img{
+    width: 30%;
+
+}
+
+.rating .star {
+    font-size: 1.5rem;
+    margin-right: 0.2rem;
+  }
+  
+  .product-badges .badge {
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+  
+  .user-reviews .review {
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 1rem;
+  }
+  
+  .pagination-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 100px;
+    position: relative;
+    width: 100%;
+}
+
 
 /**/
 

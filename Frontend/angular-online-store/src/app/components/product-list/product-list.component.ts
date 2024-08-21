@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartItem } from 'src/app/common/cart-item';
 import { Product } from 'src/app/common/product';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -20,8 +22,10 @@ export class ProductListComponent implements OnInit {
   theTotalElements: number = 0;
   previousCategoryId: number = 1;
 
+
   constructor(private productService: ProductService,
-              private route: ActivatedRoute) { }
+    private cartService: CartService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
@@ -29,30 +33,30 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  listProducts(){
+  listProducts() {
 
     this.searchMode = this.route.snapshot.paramMap.has('keyword');
 
-    if(this.searchMode) {
+    if (this.searchMode) {
       this.handleSearchProducts();
     }
     else {
       this.handleListProducts();
     }
-    
+
   }
 
-  handleSearchProducts(){
+  handleSearchProducts() {
     const theKeyword: string = this.route.snapshot.paramMap.get('keyword') || '';
 
     this.productService.searchProducts(theKeyword).subscribe(
-      data =>{
+      data => {
         this.products = data;
       }
     );
   }
 
-  handleListProducts(){
+  handleListProducts() {
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
 
     if (hasCategoryId) {
@@ -63,15 +67,15 @@ export class ProductListComponent implements OnInit {
       this.currentCategoryId = 1;
       this.currentCategoryName = 'Phones';
     }
-    
-    if(this.previousCategoryId != this.currentCategoryId){
+
+    if (this.previousCategoryId != this.currentCategoryId) {
       this.thePageNumber = 1;
     }
 
     this.previousCategoryId = this.currentCategoryId;
     console.log(`curentCategoryId=${this.currentCategoryId}, this.thePageNumber=${this.currentCategoryId}`);
 
-    this.productService.getProductListPaginate( this.thePageNumber - 1, this.thePageSize, this.currentCategoryId ).subscribe(this.processResult());
+    this.productService.getProductListPaginate(this.thePageNumber - 1, this.thePageSize, this.currentCategoryId).subscribe(this.processResult());
 
   }
   processResult() {
@@ -82,6 +86,12 @@ export class ProductListComponent implements OnInit {
       this.theTotalElements = data.page.totalElements;
     };
   }
-  
+
+  addToCart(theProduct: Product) {
+    console.log(`Adding to cart: ${theProduct.name}, ${theProduct.unitPrice}`);
+
+    const theCartItem = new CartItem(theProduct);
+    this.cartService.addToCart(theCartItem);
+  }
 
 }

@@ -12,15 +12,19 @@ import { SearchComponent } from './components/search/search.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
+import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
-    { path: 'products/:id', component: ProductDetailsComponent},
-    { path: 'search/:keyword', component: ProductListComponent},
-    { path: 'category/:id/:name', component: ProductListComponent},
-    { path: 'category', component: ProductListComponent },
-    { path: 'products', component: ProductListComponent },
-    { path: '', redirectTo: '/products', pathMatch: 'full' },
-    { path: '**', redirectTo: '/products', pathMatch: 'full' }
+  { path: 'cart-details', component: CartDetailsComponent },
+  { path: 'products/:id', component: ProductDetailsComponent },
+  { path: 'search/:keyword', component: ProductListComponent },
+  { path: 'category/:id/:name', component: ProductListComponent },
+  { path: 'category', component: ProductListComponent },
+  { path: 'products', component: ProductListComponent },
+  { path: '', redirectTo: '/products', pathMatch: 'full' },
+  { path: '**', redirectTo: '/products', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -29,16 +33,19 @@ const routes: Routes = [
     ProductListComponent,
     ProductCategoryMenuComponent,
     SearchComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartStatusComponent,
+    CartDetailsComponent
   ],
 
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
-  
+
   providers: [ProductService],
   bootstrap: [AppComponent]
 })

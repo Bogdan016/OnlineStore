@@ -132,9 +132,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
 }
 
 /* 
- * ----------------------------
  * Header Desktop Section
- * ----------------------------
  */
 
 .header-desktop {
@@ -312,9 +310,7 @@ input.au-input.au-input-xl {
 }
 
 /* 
- * ----------------------------
  * Left Menu Bar
- * ----------------------------
  */
 
 .menu-sidebar {
@@ -386,9 +382,7 @@ input.au-input.au-input-xl {
 }
 
 /* 
- * ----------------------------
  * Header Mobile Section
- * ----------------------------
  */
 
 .header-mobile {
@@ -545,9 +539,7 @@ input.au-input.au-input-xl {
 }
 
 /* 
- * ----------------------------
  * Products List
- * ----------------------------
  */
 
 .product-box img {
@@ -591,9 +583,7 @@ input.au-input.au-input-xl {
 }
 
 /* 
- * ----------------------------
  * Shopping Cart Checkout
- * ----------------------------
  */
 
 .form-area {
@@ -721,10 +711,9 @@ select {
 }
 
 /* 
- * ----------------------------
  * Shopping Cart Details
- * ----------------------------
  */
+
 
 .table {
     margin: 0
@@ -762,9 +751,7 @@ table.table.table-bordered th {
 }
 
 /* 
- * ----------------------------
  * Product Details
- * ----------------------------
  */
 
 .price {
@@ -777,7 +764,7 @@ table.table.table-bordered th {
     margin-top: 90px
 }
 
-.detail-img{
+.detail-img {
     width: 30%;
 
 }
@@ -785,19 +772,19 @@ table.table.table-bordered th {
 .rating .star {
     font-size: 1.5rem;
     margin-right: 0.2rem;
-  }
-  
-  .product-badges .badge {
+}
+
+.product-badges .badge {
     font-size: 0.9rem;
     margin-right: 0.5rem;
-  }
-  
-  .user-reviews .review {
+}
+
+.user-reviews .review {
     border-bottom: 1px solid #e9ecef;
     padding-bottom: 1rem;
-  }
-  
-  .pagination-container {
+}
+
+.pagination-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -807,13 +794,8 @@ table.table.table-bordered th {
     width: 100%;
 }
 
-
-/**/
-
 /* 
- * ----------------------------
  * Buttons
- * ----------------------------
  */
 
 .btn-info {
@@ -843,9 +825,7 @@ a.primary-btn:hover {
 }
 
 /* 
- * ----------------------------
  * Footer section
- * ----------------------------
  */
 
 footer ul li a {
@@ -871,9 +851,7 @@ footer ul li {
 }
 
 /* 
- * ----------------------------
  * Media Queries
- * ----------------------------
  */
 
 @media (max-width:1600px) {

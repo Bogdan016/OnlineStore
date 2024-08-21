@@ -12,22 +12,17 @@
 
       <div *ngFor="let tempProduct of products" class="col-md-2 col-sm-6">
         <div class="card h-100 shadow-sm">
-
           <a routerLink="/products/{{ tempProduct.id }}">
             <img src="{{ tempProduct.imageURL }}" class="card-img-top img-fluid p-3" alt="{{ tempProduct.name }}">
           </a>
           <div class="card-body d-flex flex-column">
-
             <a routerLink="/products/{{ tempProduct.id }}">
               <h5 class="card-title">{{ tempProduct.name }}</h5>
             </a>
-
             <p class="card-text mt-auto">
               <strong class="text-primary">{{ tempProduct.unitPrice | currency:'EUR' }}</strong>
             </p>
-
-            <a href="#" class="btn btn-outline-primary mt-2">Add to cart</a>
-
+            <button (click)="addToCart(tempProduct)" class="btn btn-outline-primary mt-2">Add to cart</button>
           </div>
         </div>
       </div>
@@ -41,8 +36,6 @@
           [collectionSize]="theTotalElements" (pageChange)="listProducts()">
         </ngb-pagination>
       </div>
-
-
     </div>
   </div>
 </div>

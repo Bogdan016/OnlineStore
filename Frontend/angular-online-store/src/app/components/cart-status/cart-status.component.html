@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-end align-items-center">
+    <div class="d-flex align-items-center mr-3">
+        <a routerLink="/cart-details" class="text-primary position-relative me-3">
+            <i class="fa fa-shopping-cart fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ totalQuantity }}
+                <span class="visually-hidden">items in cart</span>
+            </span>
+        </a>
+        <span class="text-muted"> {{ totalPrice | currency: 'EUR' }}</span>
+    </div>
+</div>

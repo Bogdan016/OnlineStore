@@ -3,7 +3,7 @@
   <aside class="menu-sidebar d-none d-lg-block">
 
     <div class="logo">
-      <a href="#">
+      <a routerLink="/products">
         <img src="assets/images/logo.png" alt="OnlineStore" class="img-responsive">
       </a>
     </div>
@@ -12,38 +12,27 @@
 
   </aside>
 
-
   <div class="page-container">
+
     <header class="header-desktop bg-white py-2 py-md-3 shadow-sm">
       <div class="container">
         <div class="row g-2 align-items-center">
-          <div class="col-12 col-md-9 col-lg-9">
-            <app-search></app-search>
-          </div>
-          <div
-            class="col-12 col-md-3 col-lg-3 d-flex justify-content-end justify-content-md-end align-items-end mt-2 mt-md-0">
-            <a href="shopping-detail.html" class="text-primary position-relative me-3">
-              <i class="fa fa-shopping-cart fs-5"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                2
-                <span class="visually-hidden">items in cart</span>
-              </span>
-            </a>
-            <span class="text-muted">€19.22</span>
+          <div class="col-12 d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-grow-1">
+              <app-search class="me-auto"></app-search>
+            </div>
+            <div>
+              <app-cart-status></app-cart-status>
+            </div>
           </div>
         </div>
       </div>
     </header>
-
+    
     <!-- MAIN CONTENT -->
-
-    <!-- <app-product-list></app-product-list> -->
     <router-outlet></router-outlet>
-
   </div>
-
 </div>
-
 
 <footer>
   <ul>

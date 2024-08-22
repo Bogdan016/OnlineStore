@@ -2,8 +2,8 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Bogdan016/OnlineStore">
+    <img src="Frontend/angular-online-store/src/assets/images/logo-white-no-bg.png" alt="Logo" height="200">
   </a>
 
   <h3 align="center">OnlineStore</h3>
@@ -12,24 +12,43 @@
     Shopping website for tech enthusiasts.
     <br />
     <a href="https://github.com/Bogdan016/OnlineStore"><strong>Explore the docs </strong></a>
-    .
-    <a href=""> View Demo</a>
   </p>
 </div>
 
 ## About The Project
 
-[![OnlineStore Screenshot][product-screenshot]](https://example.com)
+OnlineStore is a streamlined and contemporary website designed to provide a simple, fast, and enjoyable shopping experience. It is crafted with the latest web technologies, catering to users who seek efficiency and ease in their online shopping endeavors.
 
-OnlineStore is a streamlined and contemporary website designed to provide a simple, fast, and enjoyable shopping experience. Designed with the latest web technologies, it caters to users seeking efficiency and ease in their online shopping.
+### Why OnlineStore?
 
-Why OnlineStore?
+- **Simplicity at its Core**: Navigate, select, and purchase your favorite products with ease.
+- **Speed You Can Feel**: Experience blazing-fast load times and quick response at every step.
+- **Modern Aesthetics**: Enjoy a shopping environment that's not only functional but also visually appealing.
 
-- Simplicity at its Core: Navigate, select, and purchase your favorite products with ease.
-- Speed You Can Feel: Experience blazing-fast load times and quick response at every step.
-- Modern Aesthetics: Enjoy a shopping environment that's not only functional but also visually appealing.
+### Explore OnlineStore
+
+#### Product Discovery
+![Product Page Screenshot](Frontend/angular-online-store/src/assets/images/Presentation/ProductPage.png)
+*Explore detailed product pages that provide everything you need to know about our items.*
+
+#### Seamless Search
+![Search By Keyword Screenshot](Frontend/angular-online-store/src/assets/images/Presentation/SearchByKeyword.png)
+*Quickly find exactly what you're looking for with our intuitive search feature.*
+
+#### Responsive Mobile View
+![Phone View Screenshot](Frontend/angular-online-store/src/assets/images/Presentation/PhoneView.png)
+*Shop on the go with our fully responsive mobile interface.*
+
+#### Quick Cart Access
+![My Cart Screenshot](Frontend/angular-online-store/src/assets/images/Presentation/MyCart.png)
+*Efficiently review and modify your selections in your shopping cart.*
+
+#### Live Demo
+![OnlineStore Demo GIF](Frontend/angular-online-store/src/assets/images/Presentation/OnlineStoreDemo.gif)
+*Watch a live demonstration of the site in action.*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ### Built With
 

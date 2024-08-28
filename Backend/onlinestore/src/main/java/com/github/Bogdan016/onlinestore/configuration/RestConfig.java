@@ -1,5 +1,7 @@
 package com.github.Bogdan016.onlinestore.configuration;
 
+import com.github.Bogdan016.onlinestore.entity.Country;
+import com.github.Bogdan016.onlinestore.entity.County;
 import com.github.Bogdan016.onlinestore.entity.Product;
 import com.github.Bogdan016.onlinestore.entity.ProductCategory;
 import jakarta.persistence.EntityManager;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+
 @Configuration
 public class RestConfig implements RepositoryRestConfigurer {
 
@@ -27,33 +30,33 @@ public class RestConfig implements RepositoryRestConfigurer {
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
-        RepositoryRestConfigurer.super.configureRepositoryRestConfiguration(config, cors);
 
-        HttpMethod[] unsuportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
 
-        // dezactivam PUT, POST, DELETE pentru Product
-        config.getExposureConfiguration()
-                .forDomainType(Product.class)
-                .withItemExposure(((metdata, httpMethods) -> httpMethods.disable(unsuportedActions)))
-                .withCollectionExposure(((metdata, httpMethods) -> httpMethods.disable(unsuportedActions)));
+        HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
 
-        // dezactivam PUT, POST, DELETE pentru ProductCategory
-        config.getExposureConfiguration()
-                .forDomainType(ProductCategory.class)
-                .withItemExposure(((metdata, httpMethods) -> httpMethods.disable(unsuportedActions)))
-                .withCollectionExposure(((metdata, httpMethods) -> httpMethods.disable(unsuportedActions)));
 
-        // practic merge numai GET ca sa fie read only dar sa folosim in continuare REST API-ul
+        disableHttpMethods(Product.class, config, theUnsupportedActions);
+        disableHttpMethods(ProductCategory.class, config, theUnsupportedActions);
+        disableHttpMethods(Country.class, config, theUnsupportedActions);
+        disableHttpMethods(County.class, config, theUnsupportedActions);
 
         exposeIds(config);
+    }
+
+    private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
+        config.getExposureConfiguration()
+                .forDomainType(theClass)
+                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
+                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
     }
 
     private void exposeIds(RepositoryRestConfiguration config) {
 
         Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
+
         List<Class> entityClasses = new ArrayList<>();
 
-        for(EntityType tempEntityType :entities) {
+        for (EntityType tempEntityType : entities) {
             entityClasses.add(tempEntityType.getJavaType());
         }
 

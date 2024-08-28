@@ -1021,6 +1021,27 @@ footer ul li {
 }
 
 
+.card-header.custom-header {
+    background-color: #8ecae6; 
+    color: #343a40; 
+}
+
+.card-header.custom-header h4 {
+    color: inherit; 
+}
+
+.input-space select, .input-space input {
+    width: 100%; 
+    border: 1px solid #ced4da;
+    padding: .375rem .75rem; 
+    border-radius: .25rem; 
+}
+.input-space {
+    margin-bottom: 1rem; 
+}
+
+
+
 @media (max-width:767px) {
     .au-input-xl {
         min-width: 150px

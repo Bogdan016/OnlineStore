@@ -29,22 +29,29 @@ OnlineStore is a streamlined and contemporary website designed to provide a simp
 
 #### Product Discovery
 ![Product Page Screenshot](Frontend/angular-online-store/src/assets/images/Presentation/ProductPage.png)
+
 *Explore detailed product pages that provide everything you need to know about our items.*
 
 #### Seamless Search
 ![Search By Keyword Screenshot](Frontend/angular-online-store/src/assets/images/Presentation/SearchByKeyword.png)
+
 *Quickly find exactly what you're looking for with our intuitive search feature.*
 
 #### Responsive Mobile View
 ![Phone View Screenshot](Frontend/angular-online-store/src/assets/images/Presentation/PhoneView.png)
+
 *Shop on the go with our fully responsive mobile interface.*
 
 #### Quick Cart Access
 ![My Cart Screenshot](Frontend/angular-online-store/src/assets/images/Presentation/MyCart.png)
+
 *Efficiently review and modify your selections in your shopping cart.*
 
 #### Live Demo
 ![OnlineStore Demo GIF](Frontend/angular-online-store/src/assets/images/Presentation/OnlineStoreDemo.gif)
+
+![OnlineStore Demo GIF](Frontend/angular-online-store/src/assets/images/Presentation/CheckoutForm.gif)
+
 *Watch a live demonstration of the site in action.*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
